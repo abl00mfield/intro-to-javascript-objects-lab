@@ -46,3 +46,16 @@ Solve Exercise 4 here:
 const STARTER = 0 // I am choosing to start with Pokemon number 1 which is in the 0 position in the array of pokeman objects
 
 game.party.push(pokemon[STARTER]);
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+
+Solve Exercise 5 here:
+*/
+
+
+
+game.party.push(pokemon[7], pokemon[14], pokemon[29]);  // three random pokeman's added to party
+console.log(game);
