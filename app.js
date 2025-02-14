@@ -112,5 +112,16 @@ switch (game.party[0].number) {  // figure out which pokemon is evolved into
 }
 game.party.splice(0, 1, newPokemon);  //replace the pokemon at index zero with the new pokemon
 
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
 
-console.log(game);
+Solve Exercise 8 here:
+*/
+
+for (pokemonParty of game.party) {
+    console.log(pokemonParty.name)
+}
+
+// console.log(game);
