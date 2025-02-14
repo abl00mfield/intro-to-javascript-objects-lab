@@ -136,7 +136,7 @@ Solve Exercise 9 here:
 
 for (const starterPokemon of pokemon) {  //printing out all the starter pokemons
     if (starterPokemon.starter) {
-        console.log(`STARTER POKEMON: ${starterPokemon}`);
+        console.log(`STARTER POKEMON: `, starterPokemon);
     }
 }
 
@@ -179,7 +179,7 @@ game.catchPokemon = function (pokemonObj) {
 
 game.catchPokemon(pokemon[99]);  //catch a random pokemon
 
-console.log(`EXERCISE 11, GAME ITEMS: ${game.items}`);
+console.log(`EXERCISE 11, GAME ITEMS: `, game.items);
 
 /*
 Exercise 12
@@ -230,7 +230,7 @@ game.gymStatus = function () {  //adding new method to game object
             gymTally.incomplete += 1;
         }
     };
-    console.log(`EXCERCISE 13 - GYM TALLY: ${gymTally}`);   //logs the object to the console
+    console.log(`EXCERCISE 13 - GYM TALLY: `, gymTally);   //logs the object to the console
     
 }
 game.gymStatus();
@@ -288,7 +288,7 @@ Exercise 17
 Solve Exercise 17 here:
 */
 game.party.sort((a, b) => b.hp - a.hp);  //sort the hp value highest to lowest
-console.log(`EXCERCISE 17, SORTED HP: ${game.party}`);                      //it works by comparing the 2 values and returning a - or + number
+console.log(`EXCERCISE 17, SORTED HP: `, game.party);                      //it works by comparing the 2 values and returning a - or + number
 
 /*
 Exercise 18
@@ -391,7 +391,7 @@ Log the object when it's constructed.
 
 Solve Exercise 21 here:
 */
-    
+
 
 // console.log(game);
 
