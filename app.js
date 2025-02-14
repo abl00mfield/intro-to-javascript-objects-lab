@@ -190,7 +190,7 @@ Solve Exercise 12 here:
 */
 
 for (let i = 0; i < game.gyms.length; i++){
-    if (game.gyms[i].difficulty < 6 && !game.gyms[i].completed) {
+    if (game.gyms[i].difficulty < 6 && !game.gyms[i].completed) {  //if it's already completed, don't remark it
         game.gyms[i].completed = true;
     }
 }
@@ -248,7 +248,7 @@ Solve Exercise 14 here:
 */
 
 game.partyCount = function () {
-    return this.party.length;
+    return this.party.length;  //length can easily count the number of items in an array
 }
 
 // console.log(game);
@@ -262,8 +262,9 @@ Exercise 15
 Solve Exercise 15 here:
 */
 
-for (let i = 0; i < game.gyms.length; i++){    //very similar to previous challenge, could have written a function with the 
-                                                //the difficulty level passed in to avoid rewriting code several times
+//very similar to previous challenge, could have written a function with the 
+//the difficulty level passed in to avoid rewriting code several times
+for (let i = 0; i < game.gyms.length; i++){    
     if (game.gyms[i].difficulty < 8 && !game.gyms[i].completed) {
         game.gyms[i].completed = true;
     }
@@ -277,8 +278,10 @@ Exercise 16
 Solve Exercise 16 here:
 */
 
+console.log(game);
+
 //We have added several methods to the object and learned how to access and maniuplate the data
-// console.log(game);
+
 /*
 Exercise 17
 1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
@@ -288,7 +291,8 @@ Exercise 17
 Solve Exercise 17 here:
 */
 game.party.sort((a, b) => b.hp - a.hp);  //sort the hp value highest to lowest
-console.log(`EXCERCISE 17, SORTED HP: `, game.party);                      //it works by comparing the 2 values and returning a - or + number
+console.log(`EXCERCISE 17, SORTED HP: `, game.party);
+//it works by comparing the 2 values and returning a - or + number
 
 /*
 Exercise 18
