@@ -422,8 +422,18 @@ Log the object when it's constructed.
 Solve Exercise 21 here:
 */
 
+const pokemonByGroup = {};
+pokemon.forEach(pokemon => {
+    const type = pokemon.type;    //find the type
+    if (!pokemonByGroup[type]) {   //if it doesn't already exist, create it
+        pokemonByGroup[type] = [];  
+    }
+    pokemonByGroup[type].push(pokemon);   //push the pokemon onto the object
+});
 
-// console.log(game);
+console.log(pokemonByGroup);
+
+
 
 
 
