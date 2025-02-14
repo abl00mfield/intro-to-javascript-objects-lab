@@ -16,6 +16,9 @@ const game = {
       { name: "pokeball", quantity: 8 },
       { name: "rare candy", quantity: 99 },
     ],
+    catchPokemon(pokemonObj) {
+        this.party.push(pokemonObj);
+    },
   }
   
 //   console.dir(pokemon, { maxArrayLength: null })
@@ -120,8 +123,38 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-for (pokemonParty of game.party) {
+for (const pokemonParty of game.party) {
     console.log(pokemonParty.name)
 }
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
 
-// console.log(game);
+
+Solve Exercise 9 here:
+*/
+
+for (const starterPokemon of pokemon) {  //printing out all the starter pokemons
+    if (starterPokemon.starter) {
+        console.log(starterPokemon);
+    }
+}
+
+/*
+Exercise 10
+Create a method called `catchPokemon` and add it to the `game` object. You should not need to edit the original game object directly. This method should:
+  - Accept an object as a parameter called `pokemonObj`
+  - Add the `pokemonObj` to the `game.party` array.
+  - not return anything
+
+After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+
+Solve Exercise 10 here:
+*/
+
+// method was added to original game object up at the top
+const myPokemon = pokemon[75];   //catch a random Pokemon
+game.catchPokemon(myPokemon);    //use the method to add it to game object party array
+
+console.log(game);
