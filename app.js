@@ -157,4 +157,30 @@ Solve Exercise 10 here:
 const myPokemon = pokemon[75];   //catch a random Pokemon
 game.catchPokemon(myPokemon);    //use the method to add it to game object party array
 
-console.log(game);
+/*
+Exercise 11
+1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
+2. How will you find and update the quantity of pokeballs in the `game.items` array?
+
+Tips:
+For this exercise, it's okay to have a negative number of pokeballs.
+After updating the method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 11 here:
+*/
+
+//updating catchPokemon function
+
+game.catchPokemon = function (pokemonObj) { 
+    this.party.push(pokemonObj);
+    const myPokeball = this.items.find(item => item.name === 'pokeball');  //return the object that is named pokeball
+    myPokeball.quantity -= 1;    //once we grab the correct item, decrease the pokeballs by 1
+}
+
+game.catchPokemon(pokemon[99]);  //catch a random pokemon
+
+console.log(game.items);
+
+
+// console.log(game);
