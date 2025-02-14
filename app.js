@@ -43,7 +43,7 @@ Solve Exercise 4 here:
 */
 
 
-const STARTER = 0 // I am choosing to start with Pokemon number 1 which is in the 0 position in the array of pokeman objects
+const STARTER = 3 // I am using a constant here so I can change the starter Pokemon if desired
 
 game.party.push(pokemon[STARTER]);
 /*
@@ -76,4 +76,41 @@ for (let i = 0; i < numOfGyms; i++) {
     }
 }
 
-// console.log(game);
+/*
+Exercise 7
+1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+2. How would you replace the current starter Pokémon in your party with its evolved form?
+
+Hint: 
+  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
+  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+
+More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. When working with an array of objects, the splice() array method is ideal for replacing one element with another. 
+
+
+Solve Exercise 7 here:
+*/
+
+// For this exercise I am assuming that the starter Pokemon will always be in the first positition in the array
+
+let newPokemon;
+switch (game.party[0].number) {  // figure out which pokemon is evolved into
+    case 1:
+        newPokemon = pokemon[1];
+        break;
+    case 4:
+        newPokemon = pokemon[4];
+        break;
+    case 7:
+        newPokemon = pokemon[7];
+        break;
+    case 25:
+        newPokemon = pokemon[25];
+        
+}
+game.party.splice(0, 1, newPokemon);  //replace the pokemon at index zero with the new pokemon
+
+
+console.log(game);
