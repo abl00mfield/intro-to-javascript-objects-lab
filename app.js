@@ -366,6 +366,36 @@ If there is not a match, then return a string noting that the selected Pokemon d
 
 Solve Exercise 20 here:
 */
+
+game.catchPokemon = function (pokemonStr) {
+    pokemonStr = pokemonStr.toLowerCase().trim();
+    //search the pokemon object array looking for the name of the pokemon
+    const myPokemonObj = pokemon.find(poke => poke.name.toLowerCase().trim() === pokemonStr);
+    
+    if (!myPokemonObj) {
+        // console.log("Pokemon does not exist")
+        return "Pokemon does not exist";  //instructions asked us to return a string instead of just logging it?
+    }   //if the Pokemon does not exist, the function will return and the rest of the code won't run
+
+    const myPokeball = this.items.find(item => item.name === 'pokeball');  //return the object that is named pokeball
+    if (myPokeball.quantity > 0) {
+        myPokeball.quantity -= 1;    //once we grab the correct item, decrease the pokeballs by 1
+        while (this.party.length >= 6) {
+            const extraPokeman = this.party.pop()
+            this.collection.push(extraPokeman);
+        }
+        this.party.push(myPokemonObj);
+
+    } else {
+        console.log("Not enough pokeballs to catch pokemon")
+    }
+    
+}
+
+console.log(game.catchPokemon("Spearow"));
+console.log(game.catchPokemon("error"));
+
+
 /*
 Exercise 21
 Dynamically construct an object with the existing `pokemon` data sorted by the different pokemon types. The object will have this structure:
